@@ -5,7 +5,7 @@
   flex-direction: column;
   z-index: 100;
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -45,7 +45,7 @@
 
   display: flex;
 
-  @include media('<desktop', '>tablet') {
+  @include media('<=desktop', '>tablet') {
     flex-direction: column;
     width: $menu-width;
     align-self: flex-end;
@@ -78,7 +78,7 @@
     color: black;
   }
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     top: 0;
     left: 0;
     width: $submenu-width;
@@ -116,7 +116,7 @@
       display: inherit;
     }
 
-    @include media('<desktop') {
+    @include media('<=desktop') {
       background-color: $primary-color;
 
       .menu-link {
@@ -125,7 +125,7 @@
     }
   }
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     position: static;
   }
 }
@@ -139,11 +139,11 @@
 
   padding: $gap/2;
 
-  @include media('>=desktop') {
+  @include media('>desktop') {
     height: $header-height;
   }
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     color: black;
     flex-wrap: wrap;
     justify-content: center;
@@ -155,7 +155,7 @@
 }
 
 .menu:not(.dropdown-menu) {
-  @include media('<desktop') {
+  @include media('<=desktop') {
     > .menu-item {
       > .menu-link {
         .fa {

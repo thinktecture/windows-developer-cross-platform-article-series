@@ -2,7 +2,7 @@
 
 html {
   body {
-    @include media('<desktop') {
+    @include media('<=desktop') {
       @include media('>tablet') {
         padding-left: $menu-width;
       }
