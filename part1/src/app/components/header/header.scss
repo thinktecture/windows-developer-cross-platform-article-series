@@ -1,0 +1,21 @@
+@import '../../../styles/_variables';
+
+:host {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  height: $header-height;
+
+  background-color: $primary-color;
+
+  align-items: center;
+
+  padding: $gap/2;
+  color: white;
+}
+
+.brand {
+  padding-right: $gap/2;
+}

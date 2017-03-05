@@ -1,0 +1,18 @@
+<ul class="menu">
+  <li class="menu-item">
+    <a [routerLink]="['/home']" class="menu-link">Home</a>
+  </li>
+
+  <li class="menu-item dropdown" [ngClass]="{'show': isStarWarsMenuOpen}">
+    <span class="menu-link" (click)="toggleStarWarsMenu()">StarWars API</span>
+
+    <ul class="menu dropdown-menu">
+      <li class="menu-item">
+        <a [routerLink]="['/starwars/Planets']" class="menu-link">Planets</a>
+      </li>
+      <li class="menu-item">
+        <a [routerLink]="['/starwars/people']" class="menu-link">People</a>
+      </li>
+    </ul>
+  </li>
+</ul>

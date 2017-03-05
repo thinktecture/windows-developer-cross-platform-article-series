@@ -1,0 +1,57 @@
+@import '../../../styles/_variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 100%;
+
+  background-color: $background-color;
+  border-left: 1px solid $primary-color;
+  border-right: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  width: 100%;
+
+  .menu-link {
+    color: black;
+  }
+}
+
+.menu-item {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+
+  &.show {
+    .dropdown-menu {
+      display: inherit;
+    }
+  }
+}
+
+.menu-link {
+  color: white;
+  text-decoration: none;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+
+  padding: $gap/2;
+}
