@@ -24,7 +24,7 @@
     }
   }
 
-  @include media('<tablet') {
+  @include media('<=tablet') {
     width: 100vw;
     height: $menu-height + $submenu-height;
     align-items: center;
@@ -51,7 +51,7 @@
     align-self: flex-end;
   }
 
-  @include media('<tablet') {
+  @include media('<=tablet') {
     flex-direction: row;
     height: $menu-height;
     width: 100%;
@@ -98,7 +98,7 @@
     }
   }
 
-  @include media('<tablet') {
+  @include media('<=tablet') {
     top: $menu-height;
     width: 100%;
     height: $submenu-height;
@@ -165,7 +165,7 @@
     }
   }
 
-  @include media('<tablet') {
+  @include media('<=tablet') {
     > .menu-item {
       flex: 1;
 
