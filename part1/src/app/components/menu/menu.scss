@@ -128,6 +128,30 @@
   @include media('<=desktop') {
     position: static;
   }
+
+  &.active {
+    @include media('<=tablet'){
+      box-shadow: 0 -5px 0 0 $primary-color inset;
+    }
+
+    @include media('<=desktop', '>tablet'){
+      box-shadow: 5px 0 0 0 $primary-color inset;
+    }
+
+    @include media('>desktop'){
+      background-color: $background-color;
+
+      > .menu-link {
+        color: $primary-color;
+      }
+
+      .dropdown-menu {
+        .menu-item {
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }
 
 .menu-link {

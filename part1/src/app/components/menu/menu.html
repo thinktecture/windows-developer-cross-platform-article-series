@@ -1,16 +1,16 @@
 <ul class="menu">
-  <li class="menu-item">
+  <li class="menu-item" routerLinkActive="active">
     <a [routerLink]="['/home']" class="menu-link"><i class="fa fa-home"></i> Home</a>
   </li>
 
-  <li class="menu-item dropdown" [ngClass]="{'show': isStarWarsMenuOpen}">
+  <li class="menu-item dropdown" [ngClass]="{'show': isStarWarsMenuOpen}" routerLinkActive="active">
     <span class="menu-link" (click)="toggleStarWarsMenu()"><i class="fa fa-podcast"></i>SWAPI</span>
 
     <ul class="menu dropdown-menu">
-      <li class="menu-item">
+      <li class="menu-item" routerLinkActive="active">
         <a [routerLink]="['/list/planets/1']" class="menu-link"><i class="fa fa-globe"></i> Planets</a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item" routerLinkActive="active">
         <a [routerLink]="['/list/people/1']" class="menu-link"><i class="fa fa-users"></i>People</a>
       </li>
     </ul>
