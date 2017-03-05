@@ -78,6 +78,11 @@
     color: black;
   }
 
+  @include media('>desktop') {
+    width: inherit;
+    min-width: 100%;
+  }
+
   @include media('<=desktop') {
     top: 0;
     left: 0;
@@ -86,6 +91,8 @@
     border: none;
     background-color: $primary-color;
     justify-content: center;
+
+    border-radius: 0;
 
     .menu-link {
       color: white;

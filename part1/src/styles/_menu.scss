@@ -10,6 +10,12 @@ html {
       &.show-menu {
         app-menu {
           transform: none;
+
+          .menu-item {
+            &.active {
+              box-shadow: none
+            }
+          }
         }
 
         .backdrop {
