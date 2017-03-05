@@ -18,4 +18,9 @@ export class MenuComponent {
     this.isStarWarsMenuOpen = !this.isStarWarsMenuOpen;
     this._windowRef.nativeWindow.document.body.classList.toggle(this._bodyCssClass);
   }
+
+  public closeMenu() {
+    this.isStarWarsMenuOpen = false;
+    this._windowRef.nativeWindow.document.body.classList.remove(this._bodyCssClass);
+  }
 }
