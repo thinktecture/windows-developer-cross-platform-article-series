@@ -19,3 +19,8 @@
 .brand {
   padding-right: $gap/2;
 }
+
+.brand-logo {
+  height: $header-height - $gap;
+  margin-left: auto;
+}
