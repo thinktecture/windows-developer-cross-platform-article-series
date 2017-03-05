@@ -103,10 +103,6 @@
     width: 100%;
     height: $submenu-height;
     justify-content: flex-start;
-
-    .menu-item {
-      flex: inherit;
-    }
   }
 }
 
@@ -131,7 +127,6 @@
 
   @include media('<desktop') {
     position: static;
-    flex: 1;
   }
 }
 
@@ -159,9 +154,21 @@
   }
 }
 
-@include media('<tablet') {
-  .menu:not(.dropdown-menu) {
+.menu:not(.dropdown-menu) {
+  @include media('<desktop') {
     > .menu-item {
+      > .menu-link {
+        .fa {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    > .menu-item {
+      flex: 1;
+
       > .menu-link {
         .fa {
           width: 100%;
