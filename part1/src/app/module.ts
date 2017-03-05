@@ -12,10 +12,12 @@ import {MenuComponent} from './components/menu/menu';
 import {WindowRef} from './services/windowRef';
 import {ListComponent} from './components/list/list';
 import {StarWarsService} from './services/starWars';
+import {ContentHostComponent} from './components/contentHost/content-host';
 
 @NgModule({
   declarations: [
     RootComponent,
+    ContentHostComponent,
     HomeComponent,
     HeaderComponent,
     MenuComponent,
