@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {StarWarsService} from '../../services/starWars';
 import {ActivatedRoute, Router} from '@angular/router';
 import {StarWarsBase} from '../../models/starWarsBase';
