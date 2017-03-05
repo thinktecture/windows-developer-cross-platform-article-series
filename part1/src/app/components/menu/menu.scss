@@ -7,20 +7,30 @@
 
   @include media('<desktop') {
     position: fixed;
-    top: $header-height;
     left: 0;
     bottom: 0;
     width: $menu-width + $submenu-width;
     justify-content: center;
 
-    transform: translateX(-$submenu-width);
-
-    border-right: 1px solid darken($background-color, 10%);
-
     background-color: $background-color;
 
     transition: transform $transition-duration;
     will-change: transform;
+
+    @include media('>tablet') {
+      top: $header-height;
+      transform: translateX(-$submenu-width);
+      border-right: 1px solid darken($background-color, 10%);
+    }
+  }
+
+  @include media('<tablet') {
+    width: 100vw;
+    height: $menu-height + $submenu-height;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateY($submenu-height);
+    border-top: 1px solid darken($background-color, 10%);
   }
 }
 
@@ -35,10 +45,15 @@
 
   display: flex;
 
-  @include media('<desktop') {
+  @include media('<desktop', '>tablet') {
     flex-direction: column;
     width: $menu-width;
     align-self: flex-end;
+  }
+
+  @include media('<tablet') {
+    flex-direction: row;
+    height: $menu-height;
   }
 }
 
@@ -81,6 +96,13 @@
       }
     }
   }
+
+  @include media('<tablet') {
+    top: $menu-height;
+    width: 100%;
+    height: $submenu-height;
+    justify-content: flex-start;
+  }
 }
 
 .menu-item {
@@ -110,21 +132,31 @@
 .menu-link {
   color: white;
   text-decoration: none;
-  height: $header-height;
   display: flex;
   align-items: center;
   width: 100%;
 
   padding: $gap/2;
 
+  @include media('>=desktop') {
+    height: $header-height;
+  }
+
   @include media('<desktop') {
     color: black;
     flex-wrap: wrap;
     justify-content: center;
-    height: $menu-width;
 
     .fa {
       font-size: 2em;
+    }
+  }
+
+  @include media('<tablet') {
+    .fa {
+      width: 100%;
+      text-align: center;
+      padding: 0;
     }
   }
 }

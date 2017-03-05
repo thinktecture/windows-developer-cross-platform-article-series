@@ -3,7 +3,9 @@
 html {
   body {
     @include media('<desktop') {
-      padding-left: $menu-width + $gap/2;
+      @include media('>tablet') {
+        padding-left: $menu-width;
+      }
 
       &.show-menu {
         app-menu {
@@ -14,6 +16,10 @@ html {
           opacity: 0.75;
         }
       }
+    }
+
+    @include media('<tablet') {
+      padding-bottom: $menu-height;
     }
   }
 }
