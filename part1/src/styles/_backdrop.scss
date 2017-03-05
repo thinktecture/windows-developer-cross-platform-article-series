@@ -1,0 +1,15 @@
+@import '_utilities';
+
+.backdrop {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+
+  opacity: 0;
+
+  will-change: opacity;
+  transition: opacity $transition-duration;
+}

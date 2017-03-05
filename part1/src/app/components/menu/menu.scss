@@ -1,8 +1,31 @@
-@import '../../../styles/_variables';
+@import '../../../styles/_utilities';
 
 :host {
   display: flex;
   flex-direction: column;
+  z-index: 100;
+
+  @include media('<tablet') {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    bottom: 0;
+    width: $menu-width + $submenu-width;
+    justify-content: center;
+
+    transform: translateX(-$submenu-width);
+
+    border-right: 1px solid darken($background-color, 10%);
+
+    background-color: $background-color;
+
+    transition: transform $transition-duration;
+    will-change: transform;
+  }
+}
+
+.fa {
+  padding-right: 6px;
 }
 
 .menu {
@@ -11,6 +34,12 @@
   padding: 0;
 
   display: flex;
+
+  @include media('<tablet') {
+    flex-direction: column;
+    width: $menu-width;
+    align-self: flex-end;
+  }
 }
 
 .dropdown-menu {
@@ -32,6 +61,26 @@
   .menu-link {
     color: black;
   }
+
+  @include media('<tablet') {
+    top: 0;
+    left: 0;
+    width: $submenu-width;
+    bottom: 0;
+    border: none;
+    background-color: $primary-color;
+    justify-content: center;
+
+    .menu-link {
+      color: white;
+      justify-content: center;
+      height: inherit;
+
+      .fa {
+        font-size: inherit;
+      }
+    }
+  }
 }
 
 .menu-item {
@@ -43,6 +92,18 @@
     .dropdown-menu {
       display: inherit;
     }
+
+    @include media('<tablet') {
+      background-color: $primary-color;
+
+      .menu-link {
+        color: white;
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    position: static;
   }
 }
 
@@ -52,6 +113,18 @@
   height: $header-height;
   display: flex;
   align-items: center;
+  width: 100%;
 
   padding: $gap/2;
+
+  @include media('<tablet') {
+    color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: $menu-width;
+
+    .fa {
+      font-size: 2em;
+    }
+  }
 }

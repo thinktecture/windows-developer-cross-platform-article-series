@@ -1,0 +1,19 @@
+@import '_utilities';
+
+html {
+  body {
+    @include media('<tablet') {
+      padding-left: $menu-width + $gap/2;
+
+      &.show-menu {
+        app-menu {
+          transform: none;
+        }
+
+        .backdrop {
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+}

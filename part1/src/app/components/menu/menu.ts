@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {WindowRef} from '../../services/windowRef';
 
 @Component({
   selector: 'app-menu',
@@ -6,9 +7,15 @@ import {Component} from '@angular/core';
   styleUrls: ['menu.scss']
 })
 export class MenuComponent {
-  public isStarWarsMenuOpen: boolean = true;
+  private readonly _bodyCssClass = 'show-menu';
+
+  public isStarWarsMenuOpen: boolean;
+
+  constructor(private _windowRef: WindowRef) {
+  }
 
   public toggleStarWarsMenu() {
     this.isStarWarsMenuOpen = !this.isStarWarsMenuOpen;
+    this._windowRef.nativeWindow.document.body.classList.toggle(this._bodyCssClass);
   }
 }

@@ -9,6 +9,7 @@ import {ROUTES} from './routes';
 import {HomeComponent} from './components/home/home';
 import {HeaderComponent} from './components/header/header';
 import {MenuComponent} from './components/menu/menu';
+import {WindowRef} from './services/windowRef';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,10 @@ import {MenuComponent} from './components/menu/menu';
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  bootstrap: [RootComponent]
+  bootstrap: [RootComponent],
+  providers: [
+    WindowRef
+  ]
 })
 export class AppModule {
 }
