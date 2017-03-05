@@ -10,13 +10,16 @@ import {HomeComponent} from './components/home/home';
 import {HeaderComponent} from './components/header/header';
 import {MenuComponent} from './components/menu/menu';
 import {WindowRef} from './services/windowRef';
+import {ListComponent} from './components/list/list';
+import {StarWarsService} from './services/starWars';
 
 @NgModule({
   declarations: [
     RootComponent,
     HomeComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {WindowRef} from './services/windowRef';
   ],
   bootstrap: [RootComponent],
   providers: [
-    WindowRef
+    WindowRef,
+    StarWarsService
   ]
 })
 export class AppModule {
