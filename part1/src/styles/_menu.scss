@@ -2,7 +2,7 @@
 
 html {
   body {
-    @include media('<tablet') {
+    @include media('<desktop') {
       padding-left: $menu-width + $gap/2;
 
       &.show-menu {

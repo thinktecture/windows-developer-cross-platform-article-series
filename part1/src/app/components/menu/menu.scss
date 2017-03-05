@@ -5,7 +5,7 @@
   flex-direction: column;
   z-index: 100;
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     position: fixed;
     top: $header-height;
     left: 0;
@@ -35,7 +35,7 @@
 
   display: flex;
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     flex-direction: column;
     width: $menu-width;
     align-self: flex-end;
@@ -62,7 +62,7 @@
     color: black;
   }
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     top: 0;
     left: 0;
     width: $submenu-width;
@@ -93,7 +93,7 @@
       display: inherit;
     }
 
-    @include media('<tablet') {
+    @include media('<desktop') {
       background-color: $primary-color;
 
       .menu-link {
@@ -102,7 +102,7 @@
     }
   }
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     position: static;
   }
 }
@@ -117,7 +117,7 @@
 
   padding: $gap/2;
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     color: black;
     flex-wrap: wrap;
     justify-content: center;
