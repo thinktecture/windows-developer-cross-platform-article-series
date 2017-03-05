@@ -2,6 +2,7 @@
 @import '_menu.scss';
 @import '_backdrop.scss';
 @import '_table.scss';
+@import '_links.scss';
 
 * {
   box-sizing: border-box;
@@ -19,4 +20,5 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
   background-color: $background-color;
   user-select: none;
+  line-height: 1.5;
 }
