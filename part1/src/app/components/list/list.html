@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let m of modelList" [routerLink]="['/detail', model, id]">
+    <tr *ngFor="let m of modelList" [routerLink]="['/detail', model, m.id]">
       <td>{{ m.id }}</td>
       <td>{{ m.name }}</td>
     </tr>

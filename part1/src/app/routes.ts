@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home';
 import {ListComponent} from './components/list/list';
+import {DetailComponent} from './components/detail/detail';
 
 export const ROUTES: Routes = [
   {
@@ -15,5 +16,9 @@ export const ROUTES: Routes = [
   {
     path: 'list/:model/:page',
     component: ListComponent
+  },
+  {
+    path: 'detail/:model/:id',
+    component: DetailComponent
   }
 ];

@@ -12,6 +12,7 @@ import {MenuComponent} from './components/menu/menu';
 import {WindowRef} from './services/windowRef';
 import {ListComponent} from './components/list/list';
 import {StarWarsService} from './services/starWars';
+import {DetailComponent} from './components/detail/detail';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {StarWarsService} from './services/starWars';
     HomeComponent,
     HeaderComponent,
     MenuComponent,
-    ListComponent
+    ListComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
