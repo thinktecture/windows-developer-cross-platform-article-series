@@ -13,6 +13,7 @@ import {WindowRef} from './services/windowRef';
 import {ListComponent} from './components/list/list';
 import {StarWarsService} from './services/starWars';
 import {ContentHostComponent} from './components/contentHost/content-host';
+import {DetailComponent} from './components/detail/detail';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ContentHostComponent} from './components/contentHost/content-host';
     HomeComponent,
     HeaderComponent,
     MenuComponent,
-    ListComponent
+    ListComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
