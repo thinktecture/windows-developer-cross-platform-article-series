@@ -11,9 +11,16 @@ html {
         app-menu {
           transform: none;
 
-          .menu-item {
-            &.active {
-              box-shadow: none
+          > .menu {
+            > .menu-item {
+              &.active:not(.show) {
+                box-shadow: none;
+                background-color: lighten($alternative-background-color, 10%);
+
+                .menu-link {
+                  color: white;
+                }
+              }
             }
           }
         }
