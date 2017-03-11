@@ -15,7 +15,7 @@
   padding: $gap/2;
   color: white;
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     justify-content: center;
   }
 }
@@ -28,7 +28,7 @@
   height: $header-height - $gap;
   margin-left: auto;
 
-  @include media('<desktop') {
+  @include media('<=desktop') {
     margin-left: inherit;
     position: absolute;
     right: $gap/2;
@@ -47,7 +47,7 @@
     font-size: 20px;
   }
 
-  @include media('>=desktop') {
+  @include media('>desktop') {
     display: none;
   }
 }
