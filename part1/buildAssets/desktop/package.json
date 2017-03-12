@@ -1,5 +1,6 @@
 {
   "name": "AngularSampleApp",
+  "productName": "Angular Sample App",
   "version": "1.0.0",
   "main": "index.js"
 }

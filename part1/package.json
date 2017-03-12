@@ -13,7 +13,7 @@
     "build": "rimraf dist && ng build --output-path=\"dist/web\" --base-href=\".\"",
     "prod": "rimraf dist && ng build --prod --output-path=\"dist/web\" --base-href=\".\"",
     "prepare-electron": "mkdirp ./tmp/web && ncp buildAssets/desktop tmp && ncp dist/web tmp/web",
-    "package-desktop": "npm run prepare-electron && electron-packager ./tmp/ --all --asar --electron-version=1.6.1 --icon=\"buildAssets/resources/icon\" --out=./dist/desktop/ && rimraf tmp",
+    "package-desktop": "npm run prepare-electron && electron-packager ./tmp/ --all --asar --electron-version=1.6.2 --icon=\"buildAssets/resources/icon\" --out=./dist/desktop/ && rimraf tmp",
     "build-desktop": "npm run build && npm run package-desktop",
     "prod-desktop": "npm run prod && npm run package-desktop",
     "generate-mobile-assets": "cd dist/mobile && cordova-icon --icon=\"../../buildAssets/resources/icon.png\" && cordova-splash --splash=\"../../buildAssets/resources/splash.png\"",
