@@ -103,6 +103,12 @@
         font-size: inherit;
       }
     }
+
+    .menu-item {
+      &.active {
+        background-color: #E54F47;
+      }
+    }
   }
 
   @include media('<=tablet') {
@@ -137,15 +143,15 @@
   }
 
   &.active {
-    @include media('<=tablet'){
+    @include media('<=tablet') {
       box-shadow: 0 -5px 0 0 $primary-color inset;
     }
 
-    @include media('<=desktop', '>tablet'){
+    @include media('<=desktop', '>tablet') {
       box-shadow: 5px 0 0 0 $primary-color inset;
     }
 
-    @include media('>desktop'){
+    @include media('>desktop') {
       background-color: $background-color;
 
       > .menu-link {
