@@ -13,6 +13,7 @@ import {WindowRef} from './services/windowRef';
 import {ListComponent} from './components/list/list';
 import {StarWarsService} from './services/starWars';
 import {DetailComponent} from './components/detail/detail';
+import {PlatformService} from './services/platform';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {DetailComponent} from './components/detail/detail';
   bootstrap: [RootComponent],
   providers: [
     WindowRef,
-    StarWarsService
+    StarWarsService,
+    PlatformService
   ]
 })
 export class AppModule {

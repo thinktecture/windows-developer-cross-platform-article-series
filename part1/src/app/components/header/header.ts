@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Location} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
+import Platform = NodeJS.Platform;
+import {PlatformService} from '../../services/platform';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,10 @@ import {ActivatedRoute} from '@angular/router';
 export class HeaderComponent {
     public get isBackChevronVisible(): boolean {
     // Mock implementation, to be extended to only show the button on iOS
-    return this._location.path() !== '/home';
+    return this._location.path() !== '/home' && this._platform.isIOS;
   }
 
-  constructor(private _location: Location, private _route: ActivatedRoute) {
+  constructor(private _location: Location, private _platform: PlatformService) {
   }
 
   public goBack() {
