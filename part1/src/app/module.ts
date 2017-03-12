@@ -16,6 +16,7 @@ import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
 import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
+import {ResponsiveService} from './services/responsive';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {PokemonService} from './services/pokemon';
   providers: [
     WindowRef,
     StarWarsService,
-    PokemonService
+    PokemonService,
+    ResponsiveService
   ]
 })
 export class AppModule {

@@ -165,6 +165,68 @@
       }
     }
   }
+
+  // Animations for sub menu entries
+  @include media('<=tablet') {
+    &.opening {
+      background-color: $primary-color;
+
+      .menu-link {
+        color: white;
+      }
+    }
+
+    .dropdown-menu {
+      .menu-item {
+        transition: transform $transition-duration ease-in;
+        will-change: transform;
+      }
+    }
+
+    &.closing {
+      background-color: $background-color !important;
+
+      > .menu-link {
+        color: black !important;
+      }
+
+      .dropdown-menu {
+        .menu-item {
+          animation-name: menu-closing !important;
+        }
+      }
+    }
+
+    &.show {
+      .dropdown-menu {
+        .menu-item {
+          animation-name: menu-open;
+          animation-duration: $transition-duration;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    @keyframes menu-open {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes menu-closing {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
 }
 
 .menu-link {
