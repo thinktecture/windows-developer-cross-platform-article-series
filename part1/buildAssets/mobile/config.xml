@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.thinktecture.angularstarter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
-  <name>Angular Starter</name>
+<widget id="com.thinktecture.angularsample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
+  <name>Angular Sample App</name>
   <description>
-    Angular Starter
+    A simple Angular sample app
   </description>
   <author email="office@thinktecture.com" href="http://www.thinktecture.com">
     Thinktecture AG
