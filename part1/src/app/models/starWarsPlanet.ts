@@ -1,7 +1,7 @@
 import {ModelHelperService} from '../services/modelHelper';
-import {StarWarsBase} from './starWarsBase';
+import {BaseModel} from './baseModel';
 
-export class StarWarsPlanet implements StarWarsBase {
+export class StarWarsPlanet implements BaseModel {
   public id: number;
   public name: string;
   public rotation_period: string;

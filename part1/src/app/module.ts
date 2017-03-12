@@ -10,9 +10,12 @@ import {HomeComponent} from './components/home/home';
 import {HeaderComponent} from './components/header/header';
 import {MenuComponent} from './components/menu/menu';
 import {WindowRef} from './services/windowRef';
-import {ListComponent} from './components/list/list';
+import {StarWarsListComponent} from './components/list/starWarsList';
 import {StarWarsService} from './services/starWars';
-import {DetailComponent} from './components/detail/detail';
+import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
+import {PokemonListComponent} from './components/list/pokemonList';
+import {PokemonDetailComponent} from './components/detail/pokemonDetail';
+import {PokemonService} from './services/pokemon';
 import {PlatformService} from './services/platform';
 
 @NgModule({
@@ -21,8 +24,10 @@ import {PlatformService} from './services/platform';
     HomeComponent,
     HeaderComponent,
     MenuComponent,
-    ListComponent,
-    DetailComponent
+    StarWarsListComponent,
+    StarWarsDetailComponent,
+    PokemonListComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import {PlatformService} from './services/platform';
   providers: [
     WindowRef,
     StarWarsService,
+    PokemonService,
     PlatformService
   ]
 })

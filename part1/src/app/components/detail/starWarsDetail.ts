@@ -2,12 +2,13 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {StarWarsService} from '../../services/starWars';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
+import {ModelHelperService} from '../../services/modelHelper';
 
 @Component({
-  selector: 'app-detail',
+  selector: 'app-star-wars-detail',
   templateUrl: 'detail.html'
 })
-export class DetailComponent implements OnInit, OnDestroy {
+export class StarWarsDetailComponent implements OnInit, OnDestroy {
   private _serviceMap: Map<string, Function> = new Map<string, Function>();
   private _subscription: Subscription;
 
@@ -28,7 +29,7 @@ export class DetailComponent implements OnInit, OnDestroy {
 
         return this._serviceMap.get(model)(this.id);
       })
-      .subscribe(model => this.modelProperties = this._objectPropertiesToArray(model));
+      .subscribe(model => this.modelProperties = ModelHelperService.objectPropertiesToArray(model));
   }
 
   private _initMap() {
@@ -40,15 +41,5 @@ export class DetailComponent implements OnInit, OnDestroy {
     if (this._subscription) {
       this._subscription.unsubscribe();
     }
-  }
-
-  private _objectPropertiesToArray(obj: Object) {
-    return Object.keys(obj)
-      .map(key => {
-        return {
-          key,
-          value: obj[key]
-        };
-      });
   }
 }

@@ -1,4 +1,4 @@
-export interface StarWarsBase {
+export interface BaseModel {
   id: number;
   name: string;
 }

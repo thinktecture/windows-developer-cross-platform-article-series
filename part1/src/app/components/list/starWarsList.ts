@@ -1,18 +1,18 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {StarWarsService} from '../../services/starWars';
-import {ActivatedRoute, Router} from '@angular/router';
-import {StarWarsBase} from '../../models/starWarsBase';
+import {ActivatedRoute} from '@angular/router';
+import {BaseModel} from '../../models/baseModel';
 import {Subscription} from 'rxjs/Rx';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-star-wars-list',
   templateUrl: 'list.html'
 })
-export class ListComponent implements OnInit, OnDestroy {
+export class StarWarsListComponent implements OnInit, OnDestroy {
   private _serviceMap: Map<string, Function> = new Map<string, Function>();
   private _subscription: Subscription;
 
-  public modelList: StarWarsBase[];
+  public modelList: BaseModel[];
   public model: string;
   public modelName: string;
   public page: number;
@@ -30,7 +30,7 @@ export class ListComponent implements OnInit, OnDestroy {
 
         return this._serviceMap.get(this.model)(this.page);
       })
-      .subscribe((model: StarWarsBase[]) => this.modelList = model);
+      .subscribe((model: BaseModel[]) => this.modelList = model);
   }
 
   private _initMap() {

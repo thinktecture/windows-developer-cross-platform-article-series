@@ -8,10 +8,20 @@
 
     <ul class="menu dropdown-menu">
       <li class="menu-item" routerLinkActive="active">
-        <a [routerLink]="['/list/planets/1']" class="menu-link" (click)="closeMenu()"><i class="fa fa-globe"></i> Planets</a>
+        <a [routerLink]="['/starwars/list/planets/1']" class="menu-link" (click)="closeMenu()"><i class="fa fa-globe"></i> Planets</a>
       </li>
       <li class="menu-item" routerLinkActive="active">
-        <a [routerLink]="['/list/people/1']" class="menu-link" (click)="closeMenu()"><i class="fa fa-users"></i>People</a>
+        <a [routerLink]="['/starwars/list/people/1']" class="menu-link" (click)="closeMenu()"><i class="fa fa-users"></i>People</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="menu-item dropdown" [ngClass]="{'show': isPokemonMenuOpen}" routerLinkActive="active">
+    <span class="menu-link" (click)="togglePokemonMenu()"><i class="fa fa-optin-monster"></i>PokeAPI</span>
+
+    <ul class="menu dropdown-menu">
+      <li class="menu-item" routerLinkActive="active">
+        <a [routerLink]="['/pokemon/list/pokemon/1']" class="menu-link" (click)="closeMenu()"><i class="fa fa-bug"></i> Pokemon</a>
       </li>
     </ul>
   </li>
