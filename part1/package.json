@@ -11,7 +11,7 @@
     "clean-install": "npm run clean && npm install",
     "clean-start": "npm run clean-install && npm start",
     "build": "rimraf dist && ng build --output-path=\"dist/web\" --base-href=\".\"",
-    "prod": "rimraf dist && ng build --prod --output-path=\"dist/web\" --base-href=\".\"",
+    "prod": "rimraf dist && ng build --prod --aot=true --stats-json=true --output-path=\"dist/web\" --base-href=\".\"",
     "prepare-electron": "mkdirp ./tmp/web && ncp buildAssets/desktop tmp && ncp dist/web tmp/web",
     "package-desktop": "npm run prepare-electron && electron-packager ./tmp/ --all --asar --electron-version=1.6.2 --icon=\"buildAssets/resources/icon\" --out=./dist/desktop/ && rimraf tmp",
     "build-desktop": "npm run build && npm run package-desktop",
@@ -29,8 +29,8 @@
     "prod-mobile": "npm run prod && npm run package-mobile",
     "prod-mobile-ios": "npm run prod && npm run package-mobile-ios",
     "prod-mobile-android": "npm run prod && npm run package-mobile-android",
-    "prod-mobile-windows": "npm run prod && npm run package-mobile-windows"
-
+    "prod-mobile-windows": "npm run prod && npm run package-mobile-windows",
+    "bundle-report": "webpack-bundle-analyzer dist/web/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -58,24 +58,25 @@
     "@types/jasmine": "2.5.45",
     "@types/node": "7.0.8",
     "codelyzer": "2.0.0",
+    "cordova": "6.5.0",
+    "cordova-icon": "0.9.1",
+    "cordova-splash": "0.9.0",
+    "electron-packager": "8.5.2",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
     "karma": "1.5.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
+    "karma-coverage-istanbul-reporter": "0.3.0",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
-    "karma-coverage-istanbul-reporter": "0.3.0",
-    "cordova": "6.5.0",
-    "cordova-icon": "0.9.1",
-    "cordova-splash": "0.9.0",
-    "electron-packager": "8.5.2",
+    "mkdirp": "0.5.1",
+    "ncp": "2.0.0",
     "protractor": "5.1.1",
+    "rimraf": "2.6.1",
     "ts-node": "2.1.0",
     "tslint": "4.5.1",
     "typescript": "2.2.1",
-    "mkdirp": "0.5.1",
-    "ncp": "2.0.0",
-    "rimraf": "2.6.1"
+    "webpack-bundle-analyzer": "^2.3.1"
   }
 }
