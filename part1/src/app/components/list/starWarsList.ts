@@ -30,7 +30,9 @@ export class StarWarsListComponent implements OnInit, OnDestroy {
 
         return this._serviceMap.get(this.model)(this.page);
       })
-      .subscribe((model: BaseModel[]) => this.modelList = model);
+      .subscribe((model: BaseModel[]) => {
+        this.modelList = model;
+      });
   }
 
   private _initMap() {

@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {BrowserXhr, HttpModule} from '@angular/http';
 
 import {RootComponent} from './components/root/root';
 import {RouterModule} from '@angular/router';
@@ -17,6 +17,8 @@ import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
 import {PlatformService} from './services/platform';
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {NgProgressCustomBrowserXhr, NgProgressModule} from 'ng2-progressbar';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import {PlatformService} from './services/platform';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    NgProgressModule
   ],
   bootstrap: [RootComponent],
   providers: [
     WindowRef,
     StarWarsService,
     PokemonService,
-    PlatformService
+    PlatformService,
+    { provide: BrowserXhr, useClass: NgProgressCustomBrowserXhr } ,
   ]
 })
 export class AppModule {

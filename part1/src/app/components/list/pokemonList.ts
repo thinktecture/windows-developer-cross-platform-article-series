@@ -26,7 +26,9 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
         return this._pokemonService.list(this.page);
       })
-      .subscribe((model: BaseModel[]) => this.modelList = model);
+      .subscribe((model: BaseModel[]) => {
+        this.modelList = model;
+      });
   }
 
   public ngOnDestroy(): void {
