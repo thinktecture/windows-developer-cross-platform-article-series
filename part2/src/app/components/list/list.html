@@ -1,0 +1,16 @@
+<h1>List of {{ modelName }}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of modelList" [routerLink]="['../../../detail', model, m.id]">
+      <td>{{ m.id }}</td>
+      <td>{{ m.name }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<h1>Details</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of modelProperties">
+      <td>{{ m.key }}</td>
+      <td>{{ m.value }}</td>
+    </tr>
+  </tbody>
+</table>
