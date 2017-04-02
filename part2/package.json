@@ -5,8 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "hmr": "ng serve --hmr --e=hmr",
     "build": "ng build",
+    "hmr": "ng serve --hmr --e=hmr",
+    "build-aot": "ng build --aot --base-href=\".\" --output-path=\"build/aot\"",
+    "build-prod": "ng build --prod --base-href=\".\" --output-path=\"build/prod\"",
     "lint": "ng lint"
   },
   "private": true,
