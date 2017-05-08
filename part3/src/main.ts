@@ -4,6 +4,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {AppModule} from './app/module';
 import {environment} from './environments/environment';
 import {hmrBootstrap} from './hmr';
+import {PlatformService} from './app/services/platform';
 
 if (environment.production) {
   enableProdMode();
@@ -19,5 +20,10 @@ if (environment.hmr) {
     console.log('Are you using the --hmr flag for ng serve?');
   }
 } else {
-  window.addEventListener('load', bootstrap);
+  if (PlatformService.isCordovaApplication()) {
+    document.addEventListener('deviceready', bootstrap);
+  }
+  else {
+    window.addEventListener('load', bootstrap);
+  }
 }
