@@ -25,6 +25,7 @@ html {
 
         .backdrop {
           opacity: 0.75;
+          pointer-events: auto;
         }
       }
     }

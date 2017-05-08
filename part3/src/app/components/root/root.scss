@@ -4,7 +4,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.scroll-container {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 
   padding: $gap;
 }
