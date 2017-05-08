@@ -10,7 +10,7 @@
   <tbody>
     <tr *ngFor="let m of modelProperties">
       <td>{{ m.key }}</td>
-      <td>{{ m.value }}</td>
+      <td>{{ m.value | displayText }}</td>
     </tr>
   </tbody>
 </table>

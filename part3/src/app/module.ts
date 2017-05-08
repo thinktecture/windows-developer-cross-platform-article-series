@@ -17,6 +17,7 @@ import {PokemonListComponent} from './components/list/pokemonList';
 import {PokemonDetailComponent} from './components/detail/pokemonDetail';
 import {PokemonService} from './services/pokemon';
 import {ShareService, shareServiceFactory} from './services/share';
+import {DisplayTextPipe} from './pipes/displayText';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ShareService, shareServiceFactory} from './services/share';
     StarWarsListComponent,
     StarWarsDetailComponent,
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    DisplayTextPipe
   ],
   imports: [
     BrowserModule,
