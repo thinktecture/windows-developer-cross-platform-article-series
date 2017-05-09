@@ -2,7 +2,7 @@ const { app, BrowserWindow, globalShortcut, Tray, Menu, shell } = require('elect
 const path = require('path');
 const url = require('url');
 
-let win;
+let win, trayApp;
 
 function createWindow() {
   win = new BrowserWindow({ width: 800, height: 600 });
@@ -77,8 +77,8 @@ function buildTrayIcon() {
     }
   ]);
 
-  const trayApp = new Tray(trayIconPath);
-  trayApp.setToolTip('{Hacks}');
+  trayApp = new Tray(trayIconPath);
+  trayApp.setToolTip('AngularSample');
   trayApp.setContextMenu(contextMenu);
 }
 
