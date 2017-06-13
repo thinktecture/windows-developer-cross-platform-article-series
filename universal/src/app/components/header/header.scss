@@ -1,0 +1,43 @@
+:host {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  height: 50px;
+  background-color: #FF584F;
+  align-items: center;
+  padding: 12.5px;
+  color: white; }
+
+@media (max-width: 1024px) {
+  :host {
+    justify-content: center; } }
+
+.brand {
+  padding-right: 12.5px; }
+
+.brand-logo {
+  height: 25px;
+  margin-left: auto; }
+
+@media (max-width: 1024px) {
+  .brand-logo {
+    margin-left: inherit;
+    position: absolute;
+    right: 12.5px; } }
+
+.back-chevron {
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  left: 12.5px;
+  border: none;
+  outline: none; }
+
+.back-chevron i {
+  font-size: 20px; }
+
+@media (min-width: 1025px) {
+  .back-chevron {
+    display: none; } }
