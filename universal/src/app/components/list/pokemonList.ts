@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {BaseModel} from '../../models/baseModel';
 import {Subscription} from 'rxjs/Rx';
 import {PokemonService} from '../../services/pokemon';
+import {SeoService} from '../../services/seo';
 
 @Component({
   selector: 'app-star-wars-list',
@@ -16,10 +17,12 @@ export class PokemonListComponent implements OnInit, OnDestroy {
   public modelName  = 'Pokemon';
   public page: number;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _pokemonService: PokemonService) {
+  constructor(private _activatedRoute: ActivatedRoute, private _pokemonService: PokemonService, private _seoService: SeoService) {
   }
 
   public ngOnInit(): void {
+    this._seoService.setPageSeo('Pokémon List', 'List of all Pokémons', 'pokémon list');
+
     this._subscription = this._activatedRoute.params
       .switchMap(params => {
         this.page = +params['page'];

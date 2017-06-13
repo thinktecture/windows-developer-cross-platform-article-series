@@ -4,7 +4,7 @@ import {isPlatformServer} from '@angular/common';
 export class PlatformService {
   // Used for startup
   public static isCordovaApplication(): boolean {
-    return !!window.cordova;
+    return !global && !!window.cordova;
   }
 
   constructor(@Inject(PLATFORM_ID) private _platformId: Object) {

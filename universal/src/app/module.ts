@@ -21,6 +21,7 @@ import {DisplayTextPipe} from './pipes/displayText';
 import {DesktopIntegrationService} from './services/desktopIntegration';
 import {ElectronService} from './services/electron';
 import {PlatformService} from './services/platform';
+import {SeoService} from './services/seo';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {PlatformService} from './services/platform';
     BrowserModule.withServerTransition({ appId: 'windev-universal' }),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES, { useHash: PlatformService.isCordovaApplication() })
   ],
   bootstrap: [RootComponent],
   providers: [
@@ -47,6 +48,7 @@ import {PlatformService} from './services/platform';
     PokemonService,
     ElectronService,
     DesktopIntegrationService,
+    SeoService,
     PlatformService,
     {
       provide: ShareService,

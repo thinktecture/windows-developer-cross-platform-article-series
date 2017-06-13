@@ -11,7 +11,7 @@ export class PokemonService {
   private readonly _pageOffsetSize = 20;
 
   constructor(private _http: Http) {
-    this._baseUrl = 'https://swapi.co/api/';
+    this._baseUrl = 'https://pokeapi.co/api/v2/';
   }
 
   public list(page: number = 1): Observable<Pokemon[]> {

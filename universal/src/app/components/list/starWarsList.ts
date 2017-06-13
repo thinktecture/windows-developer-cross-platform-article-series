@@ -3,6 +3,7 @@ import {StarWarsService} from '../../services/starWars';
 import {ActivatedRoute} from '@angular/router';
 import {BaseModel} from '../../models/baseModel';
 import {Subscription} from 'rxjs/Rx';
+import {SeoService} from '../../services/seo';
 
 @Component({
   selector: 'app-star-wars-list',
@@ -17,7 +18,7 @@ export class StarWarsListComponent implements OnInit, OnDestroy {
   public modelName: string;
   public page: number;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _starWarsService: StarWarsService) {
+  constructor(private _activatedRoute: ActivatedRoute, private _starWarsService: StarWarsService, private _seoService: SeoService) {
     this._initMap();
   }
 
@@ -27,6 +28,8 @@ export class StarWarsListComponent implements OnInit, OnDestroy {
         this.page = +params['page'];
         this.model = params['model'];
         this.modelName = this.model.substring(0, 1).toUpperCase() + this.model.substring(1);
+
+        this._seoService.setPageSeo(`StarWars list of ${this.modelName}`, `List of all ${this.modelName}`, `${this.modelName} list starwars`);
 
         return this._serviceMap.get(this.model)(this.page);
       })
