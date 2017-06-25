@@ -9,7 +9,6 @@ import {ROUTES} from './routes';
 import {HomeComponent} from './components/home/home';
 import {HeaderComponent} from './components/header/header';
 import {MenuComponent} from './components/menu/menu';
-import {WindowRef} from './services/windowRef';
 import {StarWarsListComponent} from './components/list/starWarsList';
 import {StarWarsService} from './services/starWars';
 import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
@@ -20,8 +19,8 @@ import {ShareService, shareServiceFactory, shareServiceFactoryDeps} from './serv
 import {DisplayTextPipe} from './pipes/displayText';
 import {DesktopIntegrationService} from './services/desktopIntegration';
 import {ElectronService} from './services/electron';
-import {PlatformService} from './services/platform';
 import {SeoService} from './services/seo';
+import {PlatformModule} from '@ngx-unicorns/ngx-platform';
 
 @NgModule({
   declarations: [
@@ -39,17 +38,16 @@ import {SeoService} from './services/seo';
     BrowserModule.withServerTransition({ appId: 'windev-universal' }),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: PlatformService.isCordovaApplication() })
+    RouterModule.forRoot(ROUTES),
+    PlatformModule.forRoot()
   ],
   bootstrap: [RootComponent],
   providers: [
-    WindowRef,
     StarWarsService,
     PokemonService,
     ElectronService,
     DesktopIntegrationService,
     SeoService,
-    PlatformService,
     {
       provide: ShareService,
       useFactory: shareServiceFactory,

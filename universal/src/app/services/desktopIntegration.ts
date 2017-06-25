@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Router} from '@angular/router';
-import {PlatformService} from './platform';
 import {ElectronService} from './electron';
+import {PlatformService} from '@ngx-unicorns/ngx-platform';
 
 // TODO: Split into multiple services?
 
@@ -11,7 +11,7 @@ export class DesktopIntegrationService {
   }
 
   public integrate() {
-    if (!this._platformService.isElectronApplication()) {
+    if (!this._platformService.isElectronApplication) {
       return;
     }
 

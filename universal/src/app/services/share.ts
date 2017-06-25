@@ -1,14 +1,14 @@
-import {PlatformService} from './platform';
 import {ElectronService} from './electron';
 import {Injectable} from '@angular/core';
-import {WindowRef} from './windowRef';
+import {PlatformService, WindowRef} from '@ngx-unicorns/ngx-platform';
+
 
 export function shareServiceFactory(electronService: ElectronService, platformService: PlatformService, windowRef: WindowRef) {
-  if (platformService.isCordovaApplication()) {
+  if (platformService.isCordovaApplication) {
     return new CordovaShareService(windowRef);
   }
 
-  if (platformService.isElectronApplication()) {
+  if (platformService.isElectronApplication) {
     return new ElectronShareService(electronService);
   }
 

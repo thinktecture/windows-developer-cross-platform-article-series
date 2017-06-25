@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WindowRef} from '../../services/windowRef';
+import {WindowRef} from '@ngx-unicorns/ngx-platform';
 
 @Component({
   selector: 'app-menu',

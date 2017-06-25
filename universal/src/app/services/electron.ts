@@ -1,5 +1,5 @@
-import {WindowRef} from './windowRef';
 import {Injectable} from '@angular/core';
+import {WindowRef} from '@ngx-unicorns/ngx-platform';
 
 interface ElectronWindow extends Window {
   require(module: string): Electron.ElectronMainAndRenderer;
