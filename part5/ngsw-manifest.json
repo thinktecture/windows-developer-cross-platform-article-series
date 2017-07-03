@@ -15,17 +15,17 @@
   "dynamic": {
     "group": [
       {
-        "name": "starwars",
+        "name": "pokemon",
         "cache": {
           "optimizeFor": "performance",
           "strategy": "fifo",
           "maxEntries": 10
         },
         "urls": {
-          "https://swapi.co": {
+          "https://pokeapi.co": {
             "match": "prefix"
           },
-          "http://swapi.co": {
+          "http://pokeapi.co": {
             "match": "prefix"
           }
         }
