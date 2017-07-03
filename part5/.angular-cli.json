@@ -17,6 +17,7 @@
       "polyfills": "polyfills.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
+      "serviceWorker": true,
       "prefix": "app",
       "styles": [
         "styles/global.scss",

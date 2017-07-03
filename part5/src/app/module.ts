@@ -20,6 +20,8 @@ import {ShareService, shareServiceFactory, shareServiceFactoryDeps} from './serv
 import {DisplayTextPipe} from './pipes/displayText';
 import {DesktopIntegrationService} from './services/desktopIntegration';
 import {ElectronService} from './services/electron';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {NotificationService} from './services/notification';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {ElectronService} from './services/electron';
     DisplayTextPipe
   ],
   imports: [
+    ServiceWorkerModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -46,6 +49,7 @@ import {ElectronService} from './services/electron';
     PokemonService,
     ElectronService,
     DesktopIntegrationService,
+    NotificationService,
     {
       provide: ShareService,
       useFactory: shareServiceFactory,

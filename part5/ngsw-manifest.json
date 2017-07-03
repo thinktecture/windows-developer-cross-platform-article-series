@@ -1,0 +1,40 @@
+{
+  "short_name": "WinDev Sample",
+  "name": "Windows Developer PWA Sample",
+  "icons": [
+    {
+      "src": "assets/launcher-icon-3x.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ff584f",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone",
+  "dynamic": {
+    "group": [
+      {
+        "name": "starwars",
+        "cache": {
+          "optimizeFor": "performance",
+          "strategy": "fifo",
+          "maxEntries": 10
+        },
+        "urls": {
+          "https://swapi.co": {
+            "match": "prefix"
+          },
+          "http://swapi.co": {
+            "match": "prefix"
+          }
+        }
+      }
+    ]
+  },
+  "gcm_sender_id": "948958323035",
+  "push": {
+    "showNotifications": true,
+    "backgroundOnly": true
+  }
+}
