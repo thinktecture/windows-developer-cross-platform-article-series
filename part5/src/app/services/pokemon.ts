@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import {WindowRef} from './windowRef';
 import {Pokemon} from '../models/pokemon';
 
 // This could be merged with the StarWars Service, since both APIs are quite identical. But that would introduce a not necessary
@@ -11,8 +10,8 @@ export class PokemonService {
   private readonly _baseUrl: string;
   private readonly _pageOffsetSize = 20;
 
-  constructor(private _http: Http, windowRef: WindowRef) {
-    this._baseUrl = (windowRef.nativeWindow.location.href.startsWith('https') ? 'https' : 'http') + '://pokeapi.co/api/v2/';
+  constructor(private _http: Http) {
+    this._baseUrl = 'https://pokeapi.co/api/v2/';
   }
 
   public list(page: number = 1): Observable<Pokemon[]> {
