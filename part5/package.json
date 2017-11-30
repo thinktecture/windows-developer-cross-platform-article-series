@@ -6,7 +6,7 @@
     "ng": "ng",
     "push-server": "node srcApi/index.js",
     "start": "ng serve",
-    "start-prod": "ng build --prod --base-href=\".\" --output-path=\"build\" && static ./build",
+    "start-prod": "ng build --prod --base-href=\".\" --output-path=\"build\" && static -p 4200 ./build",
     "build": "rimraf build && ng build --base-href=\".\" --output-path=\"build\"",
     "hmr": "ng serve --hmr --e=hmr",
     "build-prod": "rimraf build && ng build --prod --base-href=\".\" --output-path=\"build\"",
