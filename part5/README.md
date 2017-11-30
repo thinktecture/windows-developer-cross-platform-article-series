@@ -30,6 +30,20 @@ But the config of the service worker is still valid.
 Unfortunately there is currently no support for using `ng serve --prod` with the service worker using Angular CLI 1.6-RC.1. 
 So you have to run the command again, after you've changed something (or add `nodemon` to the npm scripts for restarting the static http server).
 
+## This is how it looks like
+
+### Web
+
+![Web](assets/web.gif)
+
+### Tablet
+
+![Tablet](assets/tablet.gif)
+
+### Phone
+
+![Phone](assets/mobile.gif)
+
 ## Note
 
 The code shows different concepts of doing things, this is why some problems are solved in a different way. :-)
