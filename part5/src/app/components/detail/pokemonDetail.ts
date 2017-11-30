@@ -1,21 +1,20 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/Rx';
-import {ModelHelperService} from '../../services/modelHelper';
-import {PokemonService} from '../../services/pokemon';
-import {ShareService} from '../../services/share';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+import { ModelHelperService } from '../../services/modelHelper';
+import { PokemonService } from '../../services/pokemon';
+import { ShareService } from '../../services/share';
 
 @Component({
   selector: 'app-pokemon-detail',
   templateUrl: 'detail.html'
 })
 export class PokemonDetailComponent implements OnInit, OnDestroy {
-  private _subscription: Subscription;
-
   public id: number;
   public modelProperties: Array<{ key: string, value: string }>;
+  private _subscription: Subscription;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _pokemonService: PokemonService,  private _shareService: ShareService) {
+  constructor(private _activatedRoute: ActivatedRoute, private _pokemonService: PokemonService, private _shareService: ShareService) {
   }
 
   public ngOnInit(): void {

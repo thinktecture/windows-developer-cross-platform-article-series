@@ -1,6 +1,6 @@
-import {PlatformService} from './platform';
-import {ElectronService} from './electron';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { ElectronService } from './electron';
+import { PlatformService } from './platform';
 
 export function shareServiceFactory(electronService) {
   if (PlatformService.isCordovaApplication()) {

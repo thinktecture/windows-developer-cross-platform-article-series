@@ -1,10 +1,10 @@
-import {enableProdMode} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import {AppModule} from './app/module';
-import {environment} from './environments/environment';
-import {hmrBootstrap} from './hmr';
-import {PlatformService} from './app/services/platform';
+import { AppModule } from './app/module';
+import { PlatformService } from './app/services/platform';
+import { environment } from './environments/environment';
+import { hmrBootstrap } from './hmr';
 
 if (environment.production) {
   enableProdMode();

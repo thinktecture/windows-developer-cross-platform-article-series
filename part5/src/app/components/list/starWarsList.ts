@@ -1,21 +1,20 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {StarWarsService} from '../../services/starWars';
-import {ActivatedRoute} from '@angular/router';
-import {BaseModel} from '../../models/baseModel';
-import {Subscription} from 'rxjs/Rx';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+import { BaseModel } from '../../models/baseModel';
+import { StarWarsService } from '../../services/starWars';
 
 @Component({
   selector: 'app-star-wars-list',
   templateUrl: 'list.html'
 })
 export class StarWarsListComponent implements OnInit, OnDestroy {
-  private _serviceMap: Map<string, Function> = new Map<string, Function>();
-  private _subscription: Subscription;
-
   public modelList: BaseModel[];
   public model: string;
   public modelName: string;
   public page: number;
+  private _serviceMap: Map<string, Function> = new Map<string, Function>();
+  private _subscription: Subscription;
 
   constructor(private _activatedRoute: ActivatedRoute, private _starWarsService: StarWarsService) {
     this._initMap();
@@ -33,14 +32,14 @@ export class StarWarsListComponent implements OnInit, OnDestroy {
       .subscribe((model: BaseModel[]) => this.modelList = model);
   }
 
-  private _initMap() {
-    this._serviceMap.set('people', this._starWarsService.listPeople.bind(this._starWarsService));
-    this._serviceMap.set('planets', this._starWarsService.listPlanets.bind(this._starWarsService));
-  }
-
   public ngOnDestroy(): void {
     if (this._subscription) {
       this._subscription.unsubscribe();
     }
+  }
+
+  private _initMap() {
+    this._serviceMap.set('people', this._starWarsService.listPeople.bind(this._starWarsService));
+    this._serviceMap.set('planets', this._starWarsService.listPlanets.bind(this._starWarsService));
   }
 }

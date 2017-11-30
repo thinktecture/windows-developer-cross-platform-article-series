@@ -1,7 +1,7 @@
-import {Injectable, NgZone} from '@angular/core';
-import {Router} from '@angular/router';
-import {PlatformService} from './platform';
-import {ElectronService} from './electron';
+import { Injectable, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
+import { ElectronService } from './electron';
+import { PlatformService } from './platform';
 
 // TODO: Split into multiple services?
 

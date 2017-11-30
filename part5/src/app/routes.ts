@@ -1,9 +1,9 @@
-import {Routes} from '@angular/router';
-import {HomeComponent} from './components/home/home';
-import {StarWarsListComponent} from './components/list/starWarsList';
-import {StarWarsDetailComponent} from './components/detail/starWarsDetail';
-import {PokemonListComponent} from './components/list/pokemonList';
-import {PokemonDetailComponent} from './components/detail/pokemonDetail';
+import { Routes } from '@angular/router';
+import { PokemonDetailComponent } from './components/detail/pokemonDetail';
+import { StarWarsDetailComponent } from './components/detail/starWarsDetail';
+import { HomeComponent } from './components/home/home';
+import { PokemonListComponent } from './components/list/pokemonList';
+import { StarWarsListComponent } from './components/list/starWarsList';
 
 export const ROUTES: Routes = [
   {

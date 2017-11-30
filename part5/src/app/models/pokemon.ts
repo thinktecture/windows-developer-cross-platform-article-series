@@ -1,5 +1,5 @@
-import {BaseModel} from './baseModel';
-import {ModelHelperService} from '../services/modelHelper';
+import { ModelHelperService } from '../services/modelHelper';
+import { BaseModel } from './baseModel';
 
 export class Pokemon implements BaseModel {
   public id: number;

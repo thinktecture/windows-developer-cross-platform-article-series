@@ -1,20 +1,19 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {BaseModel} from '../../models/baseModel';
-import {Subscription} from 'rxjs/Rx';
-import {PokemonService} from '../../services/pokemon';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+import { BaseModel } from '../../models/baseModel';
+import { PokemonService } from '../../services/pokemon';
 
 @Component({
   selector: 'app-star-wars-list',
   templateUrl: 'list.html'
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
-  private _subscription: Subscription;
-
   public modelList: BaseModel[];
   public model = 'pokemon';
-  public modelName  = 'Pokemon';
+  public modelName = 'Pokemon';
   public page: number;
+  private _subscription: Subscription;
 
   constructor(private _activatedRoute: ActivatedRoute, private _pokemonService: PokemonService) {
   }

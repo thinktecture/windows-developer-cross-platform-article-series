@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {WindowRef} from '../../services/windowRef';
+import { Component } from '@angular/core';
+import { WindowRef } from '../../services/windowRef';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +7,9 @@ import {WindowRef} from '../../services/windowRef';
   styleUrls: ['menu.scss']
 })
 export class MenuComponent {
-  private readonly _bodyCssClass = 'show-menu';
-
   public isStarWarsMenuOpen: boolean;
   public isPokemonMenuOpen: boolean;
+  private readonly _bodyCssClass = 'show-menu';
 
   constructor(private _windowRef: WindowRef) {
   }

@@ -1,5 +1,5 @@
-import {ModelHelperService} from '../services/modelHelper';
-import {BaseModel} from './baseModel';
+import { ModelHelperService } from '../services/modelHelper';
+import { BaseModel } from './baseModel';
 
 export class StarWarsPlanet implements BaseModel {
   public id: number;

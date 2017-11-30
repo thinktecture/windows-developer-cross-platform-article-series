@@ -1,7 +1,10 @@
 'use strict';
 
 const webpush = require('web-push');
-const key = 'INSERT YOUR OWN KEY HERE';
+const vapidKeys = {
+  public: 'BPBc2Ei5rc3cDBa6899wa_Oem87Vm0pB2N9Al2j8dqioxpoLKwMnb3Rk7F6u9A8WnchLcnqNFgzkIjXpN1ylrJg',
+  private: 'pL0FCH8vUtOr5aI9j0Jzy0NqRoVdalYtw4xjS-00oPs\n'
+};
 
 const subscriptions = [];
 
@@ -11,7 +14,7 @@ const register = (req, res) => {
     console.log('New client registered for push', req.body.endpoint);
   }
 
-  res.send(200);
+  res.send(200, "ok");
 };
 
 const notifyAll = (req, res) => {
@@ -42,7 +45,11 @@ const sendNotification = (subscription, payload) => {
 };
 
 const setup = restify => {
-  webpush.setGCMAPIKey(key);
+  webpush.setVapidDetails(
+    'mailto:example@yourdomain.org',
+    vapidKeys.public,
+    vapidKeys.private
+  );
   restify.post('/push/register', register);
   restify.post('/push/notifyAll', notifyAll);
 };

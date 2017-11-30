@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Location} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +8,12 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['header.scss']
 })
 export class HeaderComponent {
-    public get isBackChevronVisible(): boolean {
-    // Mock implementation, to be extended to only show the button on iOS
-    return this._location.path() !== '/home';
+  constructor(private _location: Location, private _route: ActivatedRoute) {
   }
 
-  constructor(private _location: Location, private _route: ActivatedRoute) {
+  public get isBackChevronVisible(): boolean {
+    // Mock implementation, to be extended to only show the button on iOS
+    return this._location.path() !== '/home';
   }
 
   public goBack() {

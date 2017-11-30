@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DesktopIntegrationService} from '../../services/desktopIntegration';
-import {NotificationService} from '../../services/notification';
+import { Component, OnInit } from '@angular/core';
+import { DesktopIntegrationService } from '../../services/desktopIntegration';
+import { NotificationService } from '../../services/notification';
 
 @Component({
   selector: 'app-root',
