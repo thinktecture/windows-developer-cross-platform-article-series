@@ -1,6 +1,6 @@
 export class PlatformService {
   public static isBrowserApplication(): boolean {
-    return !PlatformService.isCordovaApplication();
+    return !PlatformService.isCordovaApplication() && !PlatformService.isElectronApplication();
   }
 
   public static isCordovaApplication(): boolean {

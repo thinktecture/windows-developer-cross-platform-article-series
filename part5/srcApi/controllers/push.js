@@ -1,9 +1,11 @@
 'use strict';
 
 const webpush = require('web-push');
+
+// Key generation: https://web-push-codelab.glitch.me/
 const vapidKeys = {
   public: 'BPBc2Ei5rc3cDBa6899wa_Oem87Vm0pB2N9Al2j8dqioxpoLKwMnb3Rk7F6u9A8WnchLcnqNFgzkIjXpN1ylrJg',
-  private: 'pL0FCH8vUtOr5aI9j0Jzy0NqRoVdalYtw4xjS-00oPs\n'
+  private: 'pL0FCH8vUtOr5aI9j0Jzy0NqRoVdalYtw4xjS-00oPs'
 };
 
 const subscriptions = [];

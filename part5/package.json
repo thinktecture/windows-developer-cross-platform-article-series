@@ -6,10 +6,9 @@
     "ng": "ng",
     "push-server": "node srcApi/index.js",
     "start": "ng serve",
-    "start-prod": "ng build --prod && static ./dist",
+    "start-prod": "ng build --prod --base-href=\".\" --output-path=\"build\" && static ./build",
     "build": "rimraf build && ng build --base-href=\".\" --output-path=\"build\"",
     "hmr": "ng serve --hmr --e=hmr",
-    "build-aot": "rimraf build && ng build --aot --base-href=\".\" --output-path=\"build\"",
     "build-prod": "rimraf build && ng build --prod --base-href=\".\" --output-path=\"build\"",
     "lint": "ng lint",
     "prepare-electron": "mkdirp ./tmp/web && ncp resources/electron tmp && ncp build tmp/web",
@@ -26,11 +25,7 @@
     "build-mobile": "npm run build && npm run package-mobile",
     "build-mobile-ios": "npm run build && npm run package-mobile-ios",
     "build-mobile-android": "npm run build && npm run package-mobile-android",
-    "build-mobile-windows": "npm run build && npm run package-mobile-windows",
-    "prod-mobile": "npm run build-prod && npm run package-mobile",
-    "prod-mobile-ios": "npm run build-prod && npm run package-mobile-ios",
-    "prod-mobile-android": "npm run build-prod && npm run package-mobile-android",
-    "prod-mobile-windows": "npm run build-prod && npm run package-mobile-windows"
+    "build-mobile-windows": "npm run build && npm run package-mobile-windows"
   },
   "private": true,
   "dependencies": {
